@@ -4,8 +4,8 @@ import FlechaAmarilla from "../assets/flechaamarilla.svg";
 import FichaRoja from "../assets/ficharoja.svg";
 import FichaAmarilla from "../assets/fichaamarilla.svg";
 import Tablero from "../assets/tablero.svg";
-import { comprobacionJuegoGanado } from "./comprobacionJuegoGanado";
-import { jugadaOrdenador } from "./jugadaOrdenador";
+import comprobacionJuegoGanado from "./comprobacionJuegoGanado";
+import jugadaOrdenador from "./jugadaOrdenador";
 import PanelRojoGana from "../components/PanelRojoGana";
 import PanelAmarilloGana from "../components/PanelAmarilloGana";
 

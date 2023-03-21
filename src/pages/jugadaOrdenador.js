@@ -1,4 +1,4 @@
-export const jugadaOrdenador = (celdasTablero) => {
+export default function jugadaOrdenador(celdasTablero) {
   // COMPROVACIONES ANTES DE REALIZAR LA TIRADA
 
   for (let index = 0; index <= 17; index++) {
@@ -484,4 +484,4 @@ export const jugadaOrdenador = (celdasTablero) => {
       return casilla;
     }
   }
-};
+}

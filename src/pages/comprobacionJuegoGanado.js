@@ -1,4 +1,4 @@
-export const comprobacionJuegoGanado = (celdasTablero) => {
+export default function comprobacionJuegoGanado(celdasTablero) {
   // FOR DE COMPROVACION DE LAS FILAS HORIZONTALES
 
   for (let index = 0; index <= 3; index++) {
@@ -153,4 +153,4 @@ export const comprobacionJuegoGanado = (celdasTablero) => {
       return celdasTablero[index].ocupado;
     }
   }
-};
+}
