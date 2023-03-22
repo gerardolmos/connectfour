@@ -8,7 +8,6 @@ import comprobacionJuegoGanado from "../funciones/comprobacionJuegoGanado";
 import jugadaOrdenador from "../funciones/jugadaOrdenador";
 import PanelRojoGana from "../components/PanelRojoGana";
 import PanelAmarilloGana from "../components/PanelAmarilloGana";
-import Breakpoints from "../components/Breakpoints";
 
 const Index = () => {
   const [jugador, setJugador] = useState("rojo");
@@ -135,7 +134,6 @@ const Index = () => {
 
   return (
     <>
-      <Breakpoints />
       <main className="w-full mx-auto max-w-4xl py-20 flex flex-col items-center justify-center">
         <div className=" text-center text-[#232ae0] border-4 border-blue-600 rounded-full py-2  px-10">
           por GERARD OLMOS <br />
