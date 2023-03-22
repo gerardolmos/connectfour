@@ -163,32 +163,28 @@ export default function jugadaOrdenador(celdasTablero) {
       celdasTablero[index].ocupado === "" &&
       celdasTablero[index + 1].ocupado === "rojo" &&
       celdasTablero[index + 2].ocupado === "rojo" &&
-      celdasTablero[index + 3].ocupado === "rojo" &&
-      celdasTablero[index + 7].ocupado !== ""
+      celdasTablero[index + 3].ocupado === "rojo" && 
     ) {
       return index;
     } else if (
       celdasTablero[index].ocupado === "rojo" &&
       celdasTablero[index + 1].ocupado === "" &&
       celdasTablero[index + 2].ocupado === "rojo" &&
-      celdasTablero[index + 3].ocupado === "rojo" &&
-      celdasTablero[index + 8].ocupado !== ""
+      celdasTablero[index + 3].ocupado === "rojo" && 
     ) {
       return index + 1;
     } else if (
       celdasTablero[index].ocupado === "rojo" &&
       celdasTablero[index + 1].ocupado === "rojo" &&
       celdasTablero[index + 2].ocupado === "" &&
-      celdasTablero[index + 3].ocupado === "rojo" &&
-      celdasTablero[index + 9].ocupado !== ""
+      celdasTablero[index + 3].ocupado === "rojo" && 
     ) {
       return index + 2;
     } else if (
       celdasTablero[index].ocupado === "rojo" &&
       celdasTablero[index + 1].ocupado === "rojo" &&
       celdasTablero[index + 2].ocupado === "rojo" &&
-      celdasTablero[index + 3].ocupado === "" &&
-      celdasTablero[index + 10].ocupado !== ""
+      celdasTablero[index + 3].ocupado === "" && 
     ) {
       return index + 3;
     }
