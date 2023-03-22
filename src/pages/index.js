@@ -8,14 +8,15 @@ import comprobacionJuegoGanado from "../funciones/comprobacionJuegoGanado";
 import jugadaOrdenador from "../funciones/jugadaOrdenador";
 import PanelRojoGana from "../components/PanelRojoGana";
 import PanelAmarilloGana from "../components/PanelAmarilloGana";
+import Breakpoints from "../components/Breakpoints";
 
 const Index = () => {
   const [jugador, setJugador] = useState("rojo");
   const [celdaEnRojo, setCeldaEnRojo] = useState(
-    <FichaRoja className="animate-fromTop w-36 h-36" />
+    <FichaRoja className="animate-fromTop w-full h-full sm:p-1" />
   );
   const [celdaEnAmarillo, setCeldaEnAmarillo] = useState(
-    <FichaAmarilla className="animate-fromTop w-36 h-36" />
+    <FichaAmarilla className="animate-fromTop w-full h-full sm:p-1" />
   );
 
   const [juegoRojoGanado, setjuegoRojoGanado] = useState(false);
@@ -133,53 +134,56 @@ const Index = () => {
   const gridCeldasCabecera = ["", "", "", "", "", "", ""];
 
   return (
-    <main className="w-full h-screen flex flex-col items-center justify-center bg-gradient-to-b from-slate-100 to-blue-200 ">
-      <div className=" text-center text-[#232ae0] border-4 border-blue-600 rounded-full py-2 px-10">
-        por GERARD OLMOS -{" "}
-        <a
-          href="https://www.gerardolmos.com"
-          rel="noopener noreferrer"
-          className="relative font-bold cursor-pointer z-50 hover:text-orange-600"
-          target="_blank"
-        >
-          GERARDOLMOS.COM
-        </a>
-      </div>
-      <section className="w-6xl p-10">
-        <div className="w-[1080px]">
-          <div className="relative grid grid-cols-7 align-self px-8 z-50 ">
+    <>
+      <Breakpoints />
+      <main className="w-full mx-auto max-w-4xl py-20 flex flex-col items-center justify-center">
+        <div className=" text-center text-[#232ae0] border-4 border-blue-600 rounded-full py-2  px-10">
+          por GERARD OLMOS <br />
+          <a
+            href="https://www.gerardolmos.com"
+            rel="noopener noreferrer"
+            className="relative font-bold cursor-pointer z-50 hover:text-orange-600"
+            target="_blank"
+          >
+            GERARDOLMOS.COM
+          </a>
+        </div>
+        <section className="w-full flex flex-col item-center justify-center mt-10">
+          <div className="sm:w-[700px] mx-auto relative grid grid-cols-7 gap-x-2 px-7 z-50 ">
             {gridCeldasCabecera.map((celda, index) => (
-              <div key={index} className="w-full h-full mb-5 group ">
+              <div key={index} className="group">
                 <button
-                  className="w-full h-full flex items-center justify-center hover:scale-150 transition duration-100"
+                  className="w-full h-auto flex items-center justify-center sm:hover:scale-150 transition duration-100"
                   onClick={() => handleLanzar(index)}
                   disabled={turno}
                 >
                   {jugador === "rojo" ? (
                     <FlechaRoja className="w-10 h-auto animate-bounce transition-all duration-150" />
                   ) : (
-                    <FlechaAmarilla className="w-10 h-auto animate-bounce" />
+                    <FlechaAmarilla className="w-10 h-auto animate-bounce " />
                   )}
                 </button>
               </div>
             ))}
           </div>
-          <div className="relative grid grid-cols-7 gap-0 grid-rows-6  border-8 border-transparent p-7 pb-0">
+
+          <div className="relative mx-auto w-full sm:w-[700px] grid grid-cols-7 p-7 grid-rows-6 pb-7">
             {celdasTablero.map((celda, index) => (
               <div
                 key={index}
-                className={`w-36 h-36  flex items-center justify-center`}
+                className={`flex items-center justify-center border`}
               >
                 {celda.ficha}
               </div>
             ))}
-            <Tablero className="absolute -top-[149px] -right-20" />
+            <Tablero className="absolute w-full h-auto top-[2px]  left-[1px] sm:w-[729px] sm:-top-3 sm:-left-[13px] p-4" />
           </div>
-        </div>
-        {juegoRojoGanado ? <PanelRojoGana /> : null}
-        {juegoAmarilloGanado ? <PanelAmarilloGana /> : null}
-      </section>
-    </main>
+
+          {juegoRojoGanado ? <PanelRojoGana /> : null}
+          {juegoAmarilloGanado ? <PanelAmarilloGana /> : null}
+        </section>
+      </main>
+    </>
   );
 };
 
